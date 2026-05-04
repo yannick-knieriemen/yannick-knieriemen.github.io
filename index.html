@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta property="og:title" content="Yannick Knieriemen | PhD Candidate">
+  <meta property="og:description" content="PhD Researcher at ifo Institute and LMU Munich.">
+  <meta property="og:image" content="profile.jpg">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Favicon (Emoji Style) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
   <title>Yannick Knieriemen | PhD Candidate in Economics</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
@@ -200,7 +205,16 @@
   </main>
 
   <footer>
-    © 2026 Yannick Knieriemen · Built with GitHub Pages
+    © 2026 Yannick Knieriemen · 
+    <span id="last-updated">Last updated: May 2026</span>
   </footer>
+
+  <script>
+    // Dieses Skript holt sich das Datum der letzten Änderung der Datei
+    const lastMod = new Date(document.lastModified);
+    const options = { year: 'numeric', month: 'long' };
+    document.getElementById('last-updated').textContent = 
+      "Last updated: " + lastMod.toLocaleDateString('en-US', options);
+  </script>
 </body>
 </html>
