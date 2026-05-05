@@ -14,8 +14,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --ink: #1a1814; --ink-soft: #4a4740; --ink-muted: #8a8680;
-      --paper: #f8f9fa; --paper-warm: #eeede9; --accent: #f1f3f5;
-      --accent-light: #e8f0f7; --rule: #dee2e6;
+      --paper: #f8f9fa; --paper-warm: #eeede9; --accent: #2c5f8a;
+      --accent-light: #e8f0f7; --rule: #ddd9d3;
       --serif: 'EB Garamond', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
     }
     html { scroll-behavior: smooth; }
@@ -78,27 +78,37 @@
 
   <main>
     <!-- ABOUT -->
-<section id="about">
-  <div class="hero-text">
-    <h1>Welcome!</h1>
-   <p>
-      I am a doctoral researcher at the <strong><a href="https://www.ifo.de/en/research/ifo-center-for-energy-climate-and-resources" target="_blank" style="color: inherit; text-decoration: underline;">ifo Center for Energy, Climate, and Resources</a></strong> and <strong><a href="https://www.econ.lmu.de/en/index.html" target="_blank" style="color: inherit; text-decoration: underline;">LMU Munich</a></strong>. 
-      My doctoral research is supported by a scholarship from the <strong><a href="https://www.dbu.de/en/" target="_blank" style="color: inherit; text-decoration: underline;">Deutsche Bundesstiftung Umwelt (DBU)</a></strong>.
-  </p>
-    <p>
-      My work lies at the intersection of climate modeling (IAMs) and environmental economics, with a particular focus on global inequality and the diffusion of clean technologies.
-    </p>
-    <p>
-      I am supervised by <strong>Prof. Karen Pittel</strong> (ifo & LMU) and <strong>Prof. Christian Traeger</strong> (University of Oslo).
-    </p>
-  </div>
-  <div class="avatar-wrap">
-    <div class="avatar">
-      <img src="profile.jpeg" alt="Yannick Knieriemen" onerror="this.style.display='none'; document.getElementById('initials').style.display='block';">
-      <span id="initials" class="avatar-initials" style="display:none;">YK</span>
-    </div>
-  </div>
-</section>
+    <section id="about">
+      <div class="hero-text">
+        <h1>Yannick Knieriemen</h1>
+        <p class="role">PhD Candidate in Economics · <span>ifo Institute & LMU Munich</span></p>
+        <p>
+          I am a doctoral researcher at the <strong>ifo Institute</strong> (Center for Energy, Climate, and Resources) and <strong>LMU Munich</strong>. 
+          My research is supported by a scholarship from the <strong>German Federal Environmental Foundation (DBU)</strong> and focusses on climate modeling and inequality.
+        </p>
+        <p>
+          I am supervised by <strong>Prof. Karen Pittel</strong> (ifo Institute and LMU Munich) and <strong>Prof. Christian Traeger</strong> (University of Oslo). 
+        </p>
+        <!-- CV Link direkt nach dem letzten Absatz -->
+<p style="margin-top: 1.5rem;">
+  <a href="cv.pdf" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem;">
+    View my current CV 
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </a>
+</p>
+        <div class="hero-tags">
+          <span class="tag">Climate Modeling (IAMs)</span>
+          <span class="tag">Neural Networks</span>
+          <span class="tag">Environmental Economics</span>
+        </div>
+      </div>
+      <div class="avatar-wrap">
+        <div class="avatar">
+          <img src="profile.jpeg" alt="Yannick Knieriemen" onerror="this.style.display='none'; document.getElementById('initials').style.display='block';">
+          <span id="initials" class="avatar-initials" style="display:none;">YK</span>
+        </div>
+      </div>
+    </section>
 
    <!-- RESEARCH -->
     <section id="research">
