@@ -60,6 +60,37 @@
     .btn-linkedin:hover { opacity: 0.9; }
     footer { text-align: center; padding: 2.5rem; font-size: 0.78rem; color: var(--ink-muted); }
     @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } #about { grid-template-columns: 1fr; } .avatar-wrap { order: -1; } }
+    /* Intelligente mobile Anpassung */
+@media (max-width: 600px) {
+  nav {
+    padding: 0; /* Platz am Rand optimal nutzen */
+  }
+
+  .nav-inner {
+    padding: 0 0.75rem; /* Etwas mehr Luft zu den Rändern auf Mobile */
+    justify-content: space-around; /* Verteilt Name und Links gleichmäßig */
+  }
+
+  .nav-name {
+    display: none; /* OPTIONAL: Blendet deinen Namen im Menü aus, wenn es zu eng wird (er steht ja eh groß im About) */
+  }
+
+  .nav-links {
+    gap: 0.6rem; /* Dynamischer, kleinerer Abstand */
+    width: 100%; /* Links nutzen den verfügbaren Platz */
+    justify-content: space-between; /* Verteilt die 4 Punkte über die Breite */
+  }
+
+  .nav-links a {
+    font-size: 0.72rem; /* Optimale Lesbarkeit bei maximaler Platzersparnis */
+    letter-spacing: 0.02em;
+  }
+
+  /* Verhindert, dass das Handy-Display seitlich wackelt */
+  main {
+    padding: 0 1.2rem; 
+  }
+}
   </style>
 </head>
 <body>
