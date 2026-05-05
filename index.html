@@ -6,7 +6,6 @@
   <meta property="og:image" content="profile.jpg">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- Corrected Initial Favicon (YK centered in Circle) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%232c5f8a%22/><text x=%2250%%22 y=%2250%%22 font-family=%22Georgia%22 font-weight=%22bold%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22white%22 dy=%22.35em%22>YK</text></svg>">
   <title>Yannick Knieriemen | PhD Candidate in Economics</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -31,7 +30,7 @@
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     #about { padding-top: 8rem; display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: start; }
     .hero-text h1 { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 400; line-height: 1.15; margin-bottom: 0.4rem; }
-    .hero-text .role { font-size: 0.9rem; font-weight: 400; color: var(--ink-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.8rem; }
+    .hero-text .role { font-size: 0.9rem; font-weight: 400; color: var(--ink-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.2rem; }
     .hero-text .role span { color: var(--accent); }
     .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.8rem; }
     .tag { font-size: 0.78rem; font-weight: 500; padding: 0.3rem 0.8rem; background: var(--accent-light); color: var(--accent); border-radius: 2px; }
@@ -59,38 +58,18 @@
     .btn-linkedin { background: #0077b5; color: white; }
     .btn-linkedin:hover { opacity: 0.9; }
     footer { text-align: center; padding: 2.5rem; font-size: 0.78rem; color: var(--ink-muted); }
-    @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } #about { grid-template-columns: 1fr; } .avatar-wrap { order: -1; } }
-    /* Intelligente mobile Anpassung */
-@media (max-width: 600px) {
-  nav {
-    padding: 0; /* Platz am Rand optimal nutzen */
-  }
-
-  .nav-inner {
-    padding: 0 0.75rem; /* Etwas mehr Luft zu den Rändern auf Mobile */
-    justify-content: space-around; /* Verteilt Name und Links gleichmäßig */
-  }
-
-  .nav-name {
-    display: none; /* OPTIONAL: Blendet deinen Namen im Menü aus, wenn es zu eng wird (er steht ja eh groß im About) */
-  }
-
-  .nav-links {
-    gap: 0.6rem; /* Dynamischer, kleinerer Abstand */
-    width: 100%; /* Links nutzen den verfügbaren Platz */
-    justify-content: space-between; /* Verteilt die 4 Punkte über die Breite */
-  }
-
-  .nav-links a {
-    font-size: 0.72rem; /* Optimale Lesbarkeit bei maximaler Platzersparnis */
-    letter-spacing: 0.02em;
-  }
-
-  /* Verhindert, dass das Handy-Display seitlich wackelt */
-  main {
-    padding: 0 1.2rem; 
-  }
-}
+    
+    @media (max-width: 600px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      #about { grid-template-columns: 1fr; padding-top: 6rem; }
+      .avatar-wrap { order: -1; }
+      nav { padding: 0; }
+      .nav-inner { padding: 0 0.75rem; justify-content: space-around; }
+      .nav-name { display: none; }
+      .nav-links { gap: 0.6rem; width: 100%; justify-content: space-between; }
+      .nav-links a { font-size: 0.72rem; letter-spacing: 0.02em; }
+      main { padding: 0 1.2rem; }
+    }
   </style>
 </head>
 <body>
@@ -108,12 +87,17 @@
   </nav>
 
   <main>
-<!-- ABOUT -->
+    <!-- ABOUT -->
     <section id="about">
       <div class="hero-text">
         <span style="font-size: 0.9rem; font-weight: 500; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">Welcome!</span>
         <h1>Yannick Knieriemen</h1>
         <p class="role">PhD Candidate in Economics · <span>ifo Institute & LMU Munich</span></p>
+        
+        <p style="font-size: 0.95rem; color: var(--ink-soft); font-style: italic; margin-bottom: 1.5rem;">
+          Research Interests: Climate Modeling (IAMs), Neural Networks, and Environmental Economics.
+        </p>
+
         <p>
           I am a doctoral researcher at the <strong><a href="https://www.ifo.de/en/research/ifo-center-for-energy-climate-and-resources" target="_blank" style="color: inherit; text-decoration: underline;">ifo Center for Energy, Climate, and Resources</a></strong> and <strong><a href="https://www.econ.lmu.de/en/index.html" target="_blank" style="color: inherit; text-decoration: underline;">LMU Munich</a></strong>. 
           My research is supported by a scholarship from the <strong><a href="https://www.dbu.de/en/" target="_blank" style="color: inherit; text-decoration: underline;">German Federal Environmental Foundation (DBU)</a></strong> and focusses on climate modeling and inequality.
@@ -121,18 +105,11 @@
         <p>
           I am supervised by <strong>Prof. Karen Pittel</strong> (ifo Institute and LMU Munich) and <strong>Prof. Christian Traeger</strong> (University of Oslo). 
         </p>
-        <!-- CV Link mit ID für das Datum -->
-        <!-- CV Link korrigiert: Gap entfernt, Margin beim SVG hinzugefügt -->
-<p style="margin-top: 1.5rem;">
-  <a href="cv.pdf" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center;">
-    View my current CV (<span id="cv-date"></span>)
-    <svg style="margin-left: 0.4rem;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-  </a>
-</p>
+
         <div class="hero-tags">
-          <span class="tag">Climate Modeling (IAMs)</span>
+          <span class="tag">Climate Modeling</span>
           <span class="tag">Neural Networks</span>
-          <span class="tag">Environmental Economics</span>
+          <span class="tag">Global Inequality</span>
         </div>
       </div>
       <div class="avatar-wrap">
@@ -146,13 +123,6 @@
    <!-- RESEARCH -->
     <section id="research">
       <div class="section-label">Research</div>
-      <div class="cv-block">
-        <h3>Research Interests</h3>
-        <p>
-          Climate Modeling (IAMs), Neural Networks, and the intersection of climate policy with global inequality.
-        </p>
-      </div>
-
       <div class="cv-block">
         <h3>Work in Progress</h3>
         <div class="cv-entry">
@@ -207,19 +177,16 @@
             <em>University of Mannheim</em>
           </div>
         </div>
-        <div class="cv-entry">
-          <span class="cv-year">2018 – 2023</span>
-          <div class="cv-content">
-            <strong>B.Sc. Business Administration Education</strong>
-            <em>University of Mannheim</em>
-          </div>
-        </div>
       </div>
-      <div style="margin-bottom: 2rem;">
-    <a href="cv.pdf" target="_blank" style="font-size: 0.85rem; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); padding-bottom: 2px;">
-        Download Full CV (PDF)
-    </a>
-</div>
+      
+      <!-- Prominenter CV Link am Ende der Sektion -->
+      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--paper-warm); border-radius: 4px; border: 1px solid var(--rule);">
+        <a href="cv.pdf" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; font-size: 1rem;">
+          View my full CV (<span id="cv-date"></span>)
+          <svg style="margin-left: 0.6rem;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+        <p style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 0.5rem;">PDF includes full list of publications, work experience, and academic service.</p>
+      </div>
     </section>
 
     <!-- CONTACT -->
@@ -256,11 +223,7 @@
   <script>
     const options = { year: 'numeric', month: 'long' };
     const formattedDate = new Date(document.lastModified).toLocaleDateString('en-US', options);
-    
-    // Update footer
     document.getElementById('last-updated').textContent = "Last updated: " + formattedDate;
-    
-    // Update CV link date
     document.getElementById('cv-date').textContent = formattedDate;
   </script>
 </body>
