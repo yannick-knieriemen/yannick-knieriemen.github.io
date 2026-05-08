@@ -17,16 +17,16 @@
   --ink-soft: #4a4740;
   --ink-muted: #8a8680;
   
-  /* Hintergrund der gesamten Seite (Sande-Ton) */
+  /* Der helle Hintergrund (Helles Elfenbein) */
   --paper: #f9f7f2; 
   
-  /* Hintergrund für die Boxen (Heller & "cleaner") */
-  --paper-warm: #ffffff; 
+  /* Die Boxen (Ein satterer, warmer Sand-Ton) */
+  --paper-warm: #f1ede4; 
   
   --accent: #2c5f8a;
-  --accent-light: #e8f0f7;
+  --accent-light: #e2e9f0; /* Etwas entsättigtes Blau, passt besser zu Beige */
   
-  /* Trennlinien etwas präsenter machen */
+  /* Trennlinien (Etwas dunkler für Struktur) */
   --rule: #e2dfd7; 
   
   --serif: 'EB Garamond', Georgia, serif;
@@ -67,9 +67,9 @@
     .cv-entry { display: grid; grid-template-columns: 130px 1fr; gap: 1rem; padding: 1.2rem 1rem; border-top: 1px solid var(--rule); transition: all 0.2s ease; border-radius: 4px; }
     .cv-entry:first-of-type { border-top: none; }
     .cv-entry:hover {
-  background: var(--paper-warm); /* Wird beim Hover weiß */
+  background: var(--paper-warm);
   transform: translateX(4px);
-  box-shadow: 0 2px 8px rgba(26, 24, 20, 0.05);
+  box-shadow: 0 2px 10px rgba(26, 24, 20, 0.04);
 }
     .cv-year { font-size: 0.82rem; color: var(--ink-muted); }
     .cv-content strong { font-family: var(--serif); font-size: 1.05rem; display: block; }
@@ -85,8 +85,8 @@
   border: 1px solid var(--rule); 
   padding: 2.5rem; 
   border-radius: 4px;
-  /* Subtiler Schatten für Tiefe */
-  box-shadow: 0 4px 12px rgba(26, 24, 20, 0.03); 
+  /* Warmer, weicher Schatten */
+  box-shadow: 0 4px 15px rgba(26, 24, 20, 0.05); 
 }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
     .contact-item h4 { font-size: 0.72rem; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.8rem; letter-spacing: 0.05em; }
@@ -230,12 +230,12 @@
         </div>
       </div>
       
-      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--paper-warm); border-radius: 4px; border: 1px solid var(--rule); box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
-        <a href="cv.pdf" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; font-size: 1rem;">
-          View my full CV (<span id="cv-date"></span>)
-          <svg style="margin-left: 0.6rem;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-        </a>
-      </div>
+      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--paper-warm); border-radius: 4px; border: 1px solid var(--rule); box-shadow: 0 2px 10px rgba(26, 24, 20, 0.04);">
+  <a href="cv.pdf" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; font-size: 1rem;">
+    View my full CV (<span id="cv-date"></span>)
+    <svg style="margin-left: 0.6rem;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </a>
+</div>
     </section>
 
     <section id="contact">
