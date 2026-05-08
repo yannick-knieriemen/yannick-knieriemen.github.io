@@ -100,6 +100,39 @@
       .nav-links a { font-size: 0.72rem; letter-spacing: 0.02em; }
       main { padding: 0 1.2rem; }
     }
+    /* Styling für das vergrößerte Bild (Lightbox) */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 24, 20, 0.95); /* Dunkler Hintergrund */
+  cursor: zoom-out;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Cursor-Effekt beim normalen Bild */
+.avatar {
+  cursor: zoom-in;
+}
   </style>
 </head>
 <body>
@@ -260,6 +293,24 @@
     const formattedDate = new Date(document.lastModified).toLocaleDateString('en-US', options);
     document.getElementById('last-updated').textContent = "Last updated: " + formattedDate;
     document.getElementById('cv-date').textContent = formattedDate;
+    function openLightbox() {
+  const avatarImg = document.querySelector('.avatar img').src;
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  
+  lightboxImg.src = avatarImg;
+  lightbox.classList.add('active');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+// Event Listener zum Bild hinzufügen
+document.querySelector('.avatar').addEventListener('click', openLightbox);
   </script>
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Enlarged profile picture">
+</div>
 </body>
 </html>
