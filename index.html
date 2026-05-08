@@ -43,9 +43,24 @@
     .hero-text .role span { color: var(--accent); }
     .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.8rem; }
     .tag { font-size: 0.78rem; font-weight: 500; padding: 0.3rem 0.8rem; background: var(--accent-light); color: var(--accent); border-radius: 2px; }
-    .avatar-wrap { width: 160px; }
-    .avatar { width: 160px; height: 160px; border-radius: 4px; background: var(--paper-warm); border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .avatar-wrap { width: 280px; }
+    .avatar { 
+  width: 100%; 
+  aspect-ratio: 3 / 2; /* Entspricht exakt deinem 6000x4000 Format */
+  border-radius: 4px; 
+  background: var(--paper-warm); 
+  border: 1px solid var(--rule); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+}
+    .avatar img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  image-rendering: -webkit-optimize-contrast; /* Trick für zusätzliche Schärfe */
+}
     .avatar-initials { font-family: var(--serif); font-size: 2.2rem; color: var(--ink-muted); font-style: italic; }
     .cv-block { margin-bottom: 3rem; }
     .cv-entry { display: grid; grid-template-columns: 130px 1fr; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--rule); }
@@ -70,8 +85,14 @@
     
     @media (max-width: 600px) {
       .contact-grid { grid-template-columns: 1fr; }
-      #about { grid-template-columns: 1fr; padding-top: 6rem; }
-      .avatar-wrap { order: -1; }
+      .avatar-wrap { 
+    width: 100%; /* Bild nutzt die volle Breite auf dem Handy */
+    max-width: 350px; /* Aber nicht unendlich groß */
+    margin: 0 auto 2rem auto; 
+  }
+  #about {
+    grid-template-columns: 1fr; /* Stapelt Bild und Text untereinander */
+  }
       nav { padding: 0; }
       .nav-inner { padding: 0 0.75rem; justify-content: space-around; }
       .nav-name { display: none; }
