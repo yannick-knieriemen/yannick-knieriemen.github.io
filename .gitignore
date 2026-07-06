@@ -1,0 +1,8 @@
+# LaTeX build artifacts from local compiles (CI publishes /cv.pdf at the root)
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.fls
+cv/*.fdb_latexmk
+cv/*.synctex.gz
+cv/*.pdf

@@ -11,8 +11,10 @@
 ## Files
 - `index.html` — the entire site: one page, inline CSS and JS. Some CSS
   comments are in German; that's fine.
-- `cv.pdf` — compiled CV (binary, replaced manually; source lives in LaTeX
-  elsewhere, not in this repo).
+- `cv/cv.tex` — the CV's LaTeX source (single source of truth; migrated
+  from Overleaf 2026-07-06, the old Overleaf project is retired).
+- `cv.pdf` — compiled CV. NEVER edit or replace by hand: CI builds it
+  from cv/cv.tex (see below).
 - `profile.webp` — profile photo.
 
 ## Conventions
@@ -24,13 +26,24 @@
   DM Sans body). Reuse them; don't introduce new hex values inline.
 - The site must stay fully static — GitHub Pages serves it as-is.
 
-## Updating the CV (manual, two steps!)
-1. Replace `cv.pdf` with the new compiled PDF.
-2. Update the static date inside `<span id="cv-date">` in `index.html`
-   ("View my full CV (…)"). It is intentionally NOT automatic — it should
-   reflect when the CV changed, not when the page was last deployed.
+## Updating the CV (fully automated)
+Edit `cv/cv.tex` and push. That's the whole workflow. CI
+(`.github/workflows/build-cv.yml`) then:
+1. compiles the PDF with TeX Live (`xu-cheng/latex-action`),
+2. replaces the root `cv.pdf`,
+3. bumps the static date in `<span id="cv-date">` in `index.html`,
+4. commits + pushes, which redeploys the site.
 
-The footer "Last updated" date IS automatic (`document.lastModified`,
+Do NOT hand-edit `cv.pdf` or the cv-date span — both are written by CI.
+The date inside the PDF (`\today`) and the date on the page therefore
+always agree (both = build date). Note the CI commit lands ~2 min after
+the push: `git pull` before further local work.
+
+For a fast local preview without a TeX install, Tectonic works on both
+OSes: `tectonic cv/cv.tex` (output is gitignored). Optional — pushing and
+waiting for CI is fine.
+
+The footer "Last updated" date is automatic (`document.lastModified`,
 i.e. the last deploy of index.html) — leave it as is.
 
 ## Preview
