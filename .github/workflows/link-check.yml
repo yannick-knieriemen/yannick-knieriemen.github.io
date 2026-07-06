@@ -18,8 +18,9 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          # linkedin.com blocks bots (HTTP 999) -> false positives
-          args: --no-progress --exclude 'linkedin\.com' index.html
+          # linkedin.com blocks bots (HTTP 999) and ifo.de blocks them
+          # with HTTP 503 -> false positives
+          args: --no-progress --exclude 'linkedin\.com' --exclude 'ifo\.de' index.html
           fail: false
 
       - name: Open issue on broken links
