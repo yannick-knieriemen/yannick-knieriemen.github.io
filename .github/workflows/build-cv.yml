@@ -1,0 +1,32 @@
+name: Build CV
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "cv/**"
+
+permissions:
+  contents: write
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv/cv.tex
+          work_in_root_file_dir: true
+
+      - name: Publish PDF and bump the site's CV date
+        run: |
+          mv cv/cv.pdf cv.pdf
+          MONTH=$(date -u +'%B %Y')
+          sed -i "s|<span id=\"cv-date\">[^<]*</span>|<span id=\"cv-date\">${MONTH}</span>|" index.html
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cv.pdf index.html
+          git diff --cached --quiet || { git commit -m "Build CV (${MONTH}) [auto]"; git push; }
