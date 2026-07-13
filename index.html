@@ -34,7 +34,8 @@
   ],
   "sameAs": [
     "https://www.ifo.de/en/knieriemen-y",
-    "https://www.linkedin.com/in/yannick-knieriemen/"
+    "https://www.linkedin.com/in/yannick-knieriemen/",
+    "https://github.com/yannick-knieriemen"
   ]
 }
 </script>
@@ -62,7 +63,7 @@
     :root {
   --ink: #1a1814;
   --ink-soft: #4a4740;
-  --ink-muted: #8a8680;
+  --ink-muted: #6e6a63; /* >=4.5:1 (WCAG AA) auf --paper und --paper-warm */
   
   /* Der helle Hintergrund (Helles Elfenbein) */
   --paper: #f9f7f2;
@@ -98,7 +99,7 @@
 
     /* LAYOUT */
     main { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
-    section { padding: 5rem 0; border-bottom: 1px solid var(--rule); }
+    section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     /* Bewegung nur für Nutzer ohne "Bewegung reduzieren"-Systemeinstellung */
     @media (prefers-reduced-motion: no-preference) {
@@ -124,6 +125,7 @@
 
     /* CV & ENTRIES */
     .cv-block { margin-bottom: 3rem; }
+    .cv-block h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; margin-bottom: 1rem; }
     .cv-entry { display: grid; grid-template-columns: 130px 1fr; gap: 1rem; padding: 1.2rem 1rem; border-top: 1px solid var(--rule); transition: all 0.2s ease; border-radius: 4px; }
     .cv-entry:first-of-type { border-top: none; }
     .cv-entry:hover {
@@ -167,6 +169,11 @@
     .btn-linkedin:hover { opacity: 0.9; }
     .btn-ifo { background: #3237de; color: white; } /* offizielles ifo-Blau (Logo) */
     .btn-ifo:hover { opacity: 0.9; }
+    .btn-github { background: transparent; color: var(--ink); border-color: var(--ink); } /* Outline, damit neben btn-mail kein zweiter dunkler Block steht */
+    .btn-github:hover { background: var(--ink); color: white; }
+    .contact-email { margin-top: 1rem; font-size: 0.85rem; color: var(--ink-muted); }
+    .contact-email a { color: var(--accent); text-decoration: none; }
+    .contact-email a:hover { text-decoration: underline; }
 
     /* UTILITIES */
     .lightbox { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 24, 20, 0.95); cursor: zoom-out; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
@@ -181,8 +188,8 @@
     
     @media (max-width: 600px) {
       .contact-grid { grid-template-columns: 1fr; }
-      .avatar-wrap { width: 100%; max-width: 350px; margin: 0 auto 2rem auto; }
-      #about { grid-template-columns: 1fr; padding-top: 6rem; }
+      .avatar-wrap { width: 100%; max-width: 350px; margin: 0 auto; order: -1; } /* Foto zuerst auf Mobil */
+      #about { grid-template-columns: 1fr; gap: 2rem; padding-top: 6rem; }
       .nav-name { display: none; }
       .nav-links { gap: 0.6rem; width: 100%; justify-content: space-between; }
       .nav-links a { font-size: 0.72rem; }
@@ -356,7 +363,12 @@
                 </svg>
                 Profile
               </a>
+              <a href="https://github.com/yannick-knieriemen" target="_blank" rel="noopener" class="action-btn btn-github">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                GitHub
+              </a>
             </div>
+            <p class="contact-email">Or write directly: <a href="mailto:knieriemen@ifo.de">knieriemen@ifo.de</a></p>
           </div>
           <div class="contact-item">
             <h4>Office Address</h4>
