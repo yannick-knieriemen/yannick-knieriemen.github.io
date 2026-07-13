@@ -13,10 +13,10 @@ jobs:
   build-cv:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
       - name: Compile LaTeX
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@e2f99d4b3685b0da93f97e1b86ad8fab81105098 # v3
         with:
           root_file: cv/cv.tex
           work_in_root_file_dir: true
@@ -25,8 +25,13 @@ jobs:
         run: |
           mv cv/cv.pdf cv.pdf
           MONTH=$(date -u +'%B %Y')
+          # Fail loudly if the span the sed below targets ever changes shape;
+          # otherwise the date would silently freeze while the PDF updates.
+          grep -q '<span id="cv-date">[^<]*</span>' index.html
           sed -i "s|<span id=\"cv-date\">[^<]*</span>|<span id=\"cv-date\">${MONTH}</span>|" index.html
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add cv.pdf index.html
-          git diff --cached --quiet || { git commit -m "Build CV (${MONTH}) [auto]"; git push; }
+          # Rebase first: pushes to main during the ~2 min compile window
+          # used to make this push fail silently.
+          git diff --cached --quiet || { git commit -m "Build CV (${MONTH}) [auto]"; git pull --rebase origin main; git push; }

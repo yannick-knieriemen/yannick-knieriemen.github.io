@@ -16,6 +16,11 @@
 - `cv.pdf` — compiled CV. NEVER edit or replace by hand: CI builds it
   from cv/cv.tex (see below).
 - `profile.webp` — profile photo.
+- `fonts/` — self-hosted latin-subset variable woff2 fonts (DM Sans,
+  EB Garamond, weights 400–500). No Google Fonts request — deliberate
+  (performance + GDPR); don't reintroduce the fonts.googleapis.com links.
+- `404.html`, `robots.txt`, `sitemap.xml` — branded 404 and crawler
+  plumbing. `.nojekyll` disables the useless Jekyll pass on deploys.
 
 ## Conventions
 - Keep the site a plain static one-pager — no static site generator, no
