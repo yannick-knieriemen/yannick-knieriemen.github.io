@@ -32,10 +32,25 @@
 }
 </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%232c5f8a%22/><text x=%2250%%22 y=%2250%%22 font-family=%22Georgia%22 font-weight=%22bold%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22white%22 dy=%22.35em%22>YK</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <!-- Fonts are self-hosted (latin-subset variable woff2, /fonts) — no Google
+       Fonts request, no third-party origin on the critical path. -->
+  <link rel="preload" href="fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/eb-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 400 500; /* variable font, covers both weights used */
+      font-display: swap;
+      src: url('fonts/dm-sans-latin.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'EB Garamond';
+      font-style: normal;
+      font-weight: 400 500;
+      font-display: swap;
+      src: url('fonts/eb-garamond-latin.woff2') format('woff2');
+    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
   --ink: #1a1814;
@@ -98,7 +113,7 @@
   box-shadow: 0 2px 10px rgba(26, 24, 20, 0.04);
 }
     .cv-year { font-size: 0.82rem; color: var(--ink-muted); }
-    .cv-content strong { font-family: var(--serif); font-size: 1.05rem; display: block; }
+    .cv-content strong { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; display: block; } /* 500 = real Garamond cut; default 700 would be synthesized */
     .cv-content em { font-size: 0.88rem; color: var(--ink-soft); font-style: normal; display: block; margin-bottom: 0.3rem; }
     .cv-content p { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.4; }
     .exchange-tag { display: inline-block; font-size: 0.75rem; color: var(--accent); background: var(--accent-light); padding: 0.1rem 0.5rem; border-radius: 2px; margin-top: 0.4rem; font-weight: 500; }
