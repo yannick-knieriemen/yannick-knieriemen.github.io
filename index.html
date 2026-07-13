@@ -80,7 +80,12 @@
   --serif: 'EB Garamond', Georgia, serif;
   --sans: 'DM Sans', system-ui, sans-serif;
 }
-    body { font-family: var(--sans); background: linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 100%); background-attachment: fixed; color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    /* Viewport-großer Verlauf als fixiertes Element statt
+       background-attachment: fixed — wird auf eigener Ebene composited
+       (kein Repaint beim Scrollen) und funktioniert auch in iOS Safari,
+       das fixed auf body-Hintergründen ignoriert. */
+    body::before { content: ''; position: fixed; inset: 0; z-index: -1; background: linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 100%); }
 
     /* NAVIGATION */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgb(var(--paper-rgb) / 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }

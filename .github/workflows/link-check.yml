@@ -18,9 +18,10 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
-          # linkedin.com blocks bots (HTTP 999) and ifo.de blocks them
-          # with HTTP 503 -> false positives
-          args: --no-progress --exclude 'linkedin\.com' --exclude 'ifo\.de' index.html
+          # linkedin.com (999) and ifo.de (503) block bots. Accept those
+          # statuses instead of excluding the URLs entirely, so every link
+          # is still requested and hard 404s/DNS failures are caught.
+          args: --no-progress --accept '200..=204,403,429,503,999' index.html
           fail: false
 
       - name: Open issue on broken links
