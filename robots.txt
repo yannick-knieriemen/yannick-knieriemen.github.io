@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yannick-knieriemen.github.io/sitemap.xml

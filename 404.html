@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page not found | Yannick Knieriemen</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%232c5f8a%22/><text x=%2250%%22 y=%2250%%22 font-family=%22Georgia%22 font-weight=%22bold%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22white%22 dy=%22.35em%22>YK</text></svg>">
+  <style>
+    /* Same palette and fonts as index.html; the woff2 files are cached from the main page. */
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 400 500;
+      font-display: swap;
+      src: url('fonts/dm-sans-latin.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'EB Garamond';
+      font-style: normal;
+      font-weight: 400 500;
+      font-display: swap;
+      src: url('fonts/eb-garamond-latin.woff2') format('woff2');
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1814;
+      --ink-muted: #8a8680;
+      --paper: #f9f7f2;
+      --paper-warm: #f1ede4;
+      --accent: #2c5f8a;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    body { font-family: var(--sans); background: linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 100%); color: var(--ink); min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; line-height: 1.7; }
+    h1 { font-family: var(--serif); font-size: 3rem; font-weight: 400; margin-bottom: 0.5rem; }
+    p { color: var(--ink-muted); margin-bottom: 1.5rem; }
+    a { color: var(--accent); font-weight: 500; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Page not found</h1>
+    <p>The page you are looking for does not exist or has moved.</p>
+    <a href="/">← Back to yannick-knieriemen.github.io</a>
+  </main>
+</body>
+</html>
