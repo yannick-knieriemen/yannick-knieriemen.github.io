@@ -35,8 +35,14 @@
   "sameAs": [
     "https://www.ifo.de/en/knieriemen-y",
     "https://www.linkedin.com/in/yannick-knieriemen/",
-    "https://github.com/yannick-knieriemen"
-  ]
+    "https://github.com/yannick-knieriemen",
+    "https://orcid.org/0009-0002-8183-3700"
+  ],
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "https://orcid.org/0009-0002-8183-3700"
+  }
 }
 </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%232c5f8a%22/><text x=%2250%%22 y=%2250%%22 font-family=%22Georgia%22 font-weight=%22bold%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22white%22 dy=%22.35em%22>YK</text></svg>">
@@ -171,6 +177,8 @@
     .btn-ifo:hover { opacity: 0.9; }
     .btn-github { background: transparent; color: var(--ink); border-color: var(--ink); } /* Outline, damit neben btn-mail kein zweiter dunkler Block steht */
     .btn-github:hover { background: var(--ink); color: white; }
+    .btn-orcid { background: #a6ce39; color: var(--ink); } /* offizielles ORCID-Gruen */
+    .btn-orcid:hover { opacity: 0.9; }
     .contact-email { margin-top: 1rem; font-size: 0.85rem; color: var(--ink-muted); }
     .contact-email a { color: var(--accent); text-decoration: none; }
     .contact-email a:hover { text-decoration: underline; }
@@ -366,6 +374,18 @@
               <a href="https://github.com/yannick-knieriemen" target="_blank" rel="noopener" class="action-btn btn-github">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
                 GitHub
+              </a>
+              <a href="https://orcid.org/0009-0002-8183-3700" target="_blank" rel="noopener" class="action-btn btn-orcid">
+                <!-- ORCID iD mark, official letterforms (orcid.org brand guidelines) -->
+                <svg width="16" height="16" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="128" cy="128" r="128" fill="#fff"/>
+                  <g fill="#a6ce39">
+                    <path d="M86.3 186.2H70.9V79.1h15.4v107.1z"/>
+                    <path d="M108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4z"/>
+                    <path d="M88.7 56.8c0 5.5-4.5 10.1-10.1 10.1-5.6 0-10.1-4.6-10.1-10.1 0-5.6 4.5-10.1 10.1-10.1 5.6 0 10.1 4.6 10.1 10.1z"/>
+                  </g>
+                </svg>
+                ORCID iD
               </a>
             </div>
             <p class="contact-email">Or write directly: <a href="mailto:knieriemen@ifo.de">knieriemen@ifo.de</a></p>
