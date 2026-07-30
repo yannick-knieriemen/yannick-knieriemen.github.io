@@ -42,7 +42,8 @@ Edit `cv/cv.tex` and push. That's the whole workflow. CI
 Do NOT hand-edit `cv.pdf` or the cv-date span — both are written by CI.
 The date inside the PDF (`\today`) and the date on the page therefore
 always agree (both = build date). Note the CI commit lands ~2 min after
-the push: `git pull` before further local work.
+the push: `git pull` before further local work in the same session (the
+session-start hook below only covers the start of a session).
 
 For a fast local preview without a TeX install, Tectonic works on both
 OSes: `tectonic cv/cv.tex` (output is gitignored). Optional — pushing and
@@ -61,6 +62,19 @@ i.e. the last deploy of index.html) — leave it as is.
   trigger. Failures open a GitHub issue. linkedin.com is excluded (it
   blocks bots and produces false positives).
 
+## Staying in sync (session-start hook)
+`.claude/hooks/pull-latest.sh`, wired to `SessionStart` in
+`.claude/settings.json`, fetches and fast-forwards before any work starts.
+Reason: CI pushes to `main` on its own and edits arrive from the other
+machine, so a session begun on a stale `main` only finds out when the push
+is rejected (happened 2026-07-30, 11 commits behind).
+
+Fast-forward only. Dirty working tree or a diverged branch: the hook says
+so and changes nothing — resolve by hand. Config changes take effect from
+the next session, not the one in which they were made.
+
 ## Cross-platform
 Everything here works identically on Windows and Linux: plain git + static
-files. No machine-specific config belongs in this repo.
+files. No machine-specific config belongs in this repo. `.gitattributes`
+pins `*.sh` to LF — Git Bash breaks on CRLF, which would kill the
+session-start hook on a fresh Windows clone.
