@@ -54,14 +54,14 @@
     @font-face {
       font-family: 'DM Sans';
       font-style: normal;
-      font-weight: 400 500; /* variable font, covers both weights used */
+      font-weight: 100 1000; /* full wght axis of the variable font: real bold, no synthesis */
       font-display: swap;
       src: url('fonts/dm-sans-latin.woff2') format('woff2');
     }
     @font-face {
       font-family: 'EB Garamond';
       font-style: normal;
-      font-weight: 400 500;
+      font-weight: 400 800;
       font-display: swap;
       src: url('fonts/eb-garamond-latin.woff2') format('woff2');
     }
@@ -178,14 +178,14 @@
     .btn-mail { background: var(--ink); color: white; }
     .btn-mail:hover { background: var(--accent); }
     /* Profil-Links: ruhige Outline-Buttons, die Marke steckt nur im Icon
-       und im Hover-Rahmen — so konkurrieren sie nicht mit btn-mail. */
+       und im farbigen Rahmen — so konkurrieren sie nicht mit btn-mail. */
     .btn-linkedin { --brand: var(--brand-linkedin); }
     .btn-ifo { --brand: var(--brand-ifo); }
     .btn-github { --brand: var(--ink); }
     .btn-orcid { --brand: var(--brand-orcid); }
-    .btn-linkedin, .btn-ifo, .btn-github, .btn-orcid { background: var(--paper); color: var(--ink); border-color: var(--rule); }
+    .btn-linkedin, .btn-ifo, .btn-github, .btn-orcid { background: var(--paper); color: var(--ink); border: 2px solid var(--brand); }
     .btn-linkedin svg, .btn-ifo svg, .btn-github svg, .btn-orcid svg { color: var(--brand); }
-    .btn-linkedin:hover, .btn-ifo:hover, .btn-github:hover, .btn-orcid:hover { border-color: var(--brand); }
+    .btn-linkedin:hover, .btn-ifo:hover, .btn-github:hover, .btn-orcid:hover { background: color-mix(in srgb, var(--brand) 10%, var(--paper)); }
     .contact-email { margin-top: 1rem; font-size: 0.85rem; color: var(--ink-muted); }
     .contact-email a { color: var(--accent); text-decoration: none; }
     .contact-email a:hover { text-decoration: underline; }
@@ -345,11 +345,11 @@
       <div class="cv-block">
         <h3>Teaching</h3>
         <div class="cv-entry">
-          <span class="cv-year">since 2026</span>
+          <span class="cv-year">2026/2027</span>
           <div class="cv-content">
             <strong>Teaching Assistant, Principles of Economics</strong>
             <em>LMU Munich</em>
-            <p>Exercise sessions in the Winter term</p>
+            <p>Exercise sessions in the Fall/Winter term</p>
           </div>
         </div>
         <div class="cv-entry">
@@ -357,7 +357,7 @@
           <div class="cv-content">
             <strong>Teaching Assistant, Microeconomics A</strong>
             <em>University of Mannheim</em>
-            <p>Tutorial sessions each Spring term</p>
+            <p>Tutorial sessions each Spring/Summer term</p>
           </div>
         </div>
         <div class="cv-entry">
@@ -365,7 +365,7 @@
           <div class="cv-content">
             <strong>Teaching Assistant, Mathematics Pre-Course</strong>
             <em>University of Mannheim</em>
-            <p>Pre-course each Fall term</p>
+            <p>Pre-course before each Fall/Winter term</p>
           </div>
         </div>
       </div>
