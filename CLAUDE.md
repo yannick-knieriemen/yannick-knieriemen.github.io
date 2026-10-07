@@ -73,11 +73,6 @@ Fast-forward only. Dirty working tree or a diverged branch: the hook says
 so and changes nothing — resolve by hand. Config changes take effect from
 the next session, not the one in which they were made.
 
-## Pending content
-- Teaching block (`#cv` section, "Teaching" h3): Yannick starts as TA for
-  Principles of Economics in October 2026 — add that entry to
-  `index.html` once it actually starts, not before.
-
 ## Cross-platform
 Everything here works identically on Windows and Linux: plain git + static
 files. No machine-specific config belongs in this repo. `.gitattributes`
