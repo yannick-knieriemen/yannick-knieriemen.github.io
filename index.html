@@ -7,8 +7,8 @@
   <meta name="description" content="Yannick Knieriemen is a PhD candidate in economics at the ifo Institute and LMU Munich, researching how climate policy interacts with global inequality and the diffusion of clean technologies.">
   <meta name="google-site-verification" content="Y5QfW1675ezO-8ymSMbSHDqm7GsEfxDznzv46AXPeIo" />
   <link rel="canonical" href="https://yannick-knieriemen.github.io/">
-  <meta property="og:title" content="Yannick Knieriemen | PhD Candidate">
-  <meta property="og:description" content="PhD Researcher at ifo Institute and LMU Munich.">
+  <meta property="og:title" content="Yannick Knieriemen | PhD Candidate in Economics">
+  <meta property="og:description" content="PhD Candidate in Economics at ifo Institute and LMU Munich.">
   <meta property="og:image" content="https://yannick-knieriemen.github.io/profile.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="900">
@@ -228,7 +228,7 @@
         <p class="role">PhD Candidate in Economics · <span>ifo Institute & LMU Munich</span></p>
         
         <p>
-          I am a <strong><a href="https://www.ifo.de/en/knieriemen-y" target="_blank" rel="noopener" class="text-link">doctoral researcher</a></strong> at the <strong><a href="https://www.ifo.de/en/research/ifo-center-for-energy-climate-and-resources" target="_blank" rel="noopener" class="text-link">ifo Center for Energy, Climate, and Resources</a></strong> and <strong><a href="https://www.econ.lmu.de/en/index.html" target="_blank" rel="noopener" class="text-link">LMU Munich</a></strong>.
+          I am a <strong><a href="https://www.ifo.de/en/knieriemen-y" target="_blank" rel="noopener" class="text-link">PhD candidate</a></strong> at the <strong><a href="https://www.ifo.de/en/research/ifo-center-for-energy-climate-and-resources" target="_blank" rel="noopener" class="text-link">ifo Center for Energy, Climate, and Resources</a></strong> and <strong><a href="https://www.econ.lmu.de/en/index.html" target="_blank" rel="noopener" class="text-link">LMU Munich</a></strong>.
           My research is supported by a scholarship from the <strong><a href="https://www.dbu.de/en/" target="_blank" rel="noopener" class="text-link">German Federal Environmental Foundation (DBU)</a></strong>.
         </p>
         <p>
@@ -306,30 +306,30 @@
         <div class="cv-entry">
           <span class="cv-year">since 05/2026</span>
           <div class="cv-content">
-            <strong>PhD in Economics</strong>
+            <strong>PhD Candidate in Economics</strong>
             <em>ifo Institute and LMU Munich</em>
           </div>
         </div>
         <div class="cv-entry">
-          <span class="cv-year">2023 – 2026</span>
+          <span class="cv-year">08/2023 – 04/2026</span>
           <div class="cv-content">
             <strong>M.Sc. Economics</strong>
             <em>University of Mannheim</em>
             <p>Master's Thesis: "Describing Divergent Carbon Pathways: A Theoretical and Quantitative Assessment within a Simplified ACE Framework"</p>
-            <span class="exchange-tag">Exchange Semester: University of Oslo (UiO), Fall 2024</span>
+            <span class="exchange-tag">Exchange Semester: University of Oslo (UiO), 08/2024 – 12/2024</span>
           </div>
         </div>
         <div class="cv-entry">
-          <span class="cv-year">2020 – 2023</span>
+          <span class="cv-year">08/2020 – 07/2023</span>
           <div class="cv-content">
             <strong>B.Sc. Economics</strong>
             <em>University of Mannheim</em>
           </div>
         </div>
         <div class="cv-entry">
-          <span class="cv-year">2018 – 2023</span>
+          <span class="cv-year">08/2018 – 07/2023</span>
           <div class="cv-content">
-            <strong>B.Sc. Economic and Business Education</strong>
+            <strong>B.Sc. Business Education</strong>
             <em>University of Mannheim</em>
           </div>
         </div>
@@ -338,24 +338,26 @@
       <div class="cv-block">
         <h3>Teaching</h3>
         <div class="cv-entry">
-          <span class="cv-year">Winter 2026/27</span>
+          <span class="cv-year">since 10/2026</span>
           <div class="cv-content">
             <strong>Teaching Assistant, Principles of Economics</strong>
             <em>LMU Munich</em>
           </div>
         </div>
         <div class="cv-entry">
-          <span class="cv-year">Fall 2021 – 2025</span>
-          <div class="cv-content">
-            <strong>Teaching Assistant, Preparatory Course Mathematics</strong>
-            <em>University of Mannheim</em>
-          </div>
-        </div>
-        <div class="cv-entry">
-          <span class="cv-year">Spring 2022 – 2025</span>
+          <span class="cv-year">2022 – 2025</span>
           <div class="cv-content">
             <strong>Teaching Assistant, Microeconomics A</strong>
             <em>University of Mannheim</em>
+            <p>Tutorial sessions each Spring term</p>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <span class="cv-year">2021 – 2025</span>
+          <div class="cv-content">
+            <strong>Teaching Assistant, Mathematics Pre-Course</strong>
+            <em>University of Mannheim</em>
+            <p>Pre-course each Fall term</p>
           </div>
         </div>
       </div>
@@ -442,8 +444,8 @@
     const options = { year: 'numeric', month: 'long' };
     const formattedDate = new Date(document.lastModified).toLocaleDateString('en-US', options);
     document.getElementById('last-updated').textContent = "Last updated: " + formattedDate;
-    // cv-date is static in the HTML: update it manually when replacing cv.pdf
-    // (document.lastModified would show the page deploy date, not the CV's).
+    // cv-date is static in the HTML and bumped by CI (build-cv.yml) on each
+    // CV build; document.lastModified would show the page deploy date instead.
 
     // 2. Lightbox Logik
     function openLightbox() {
