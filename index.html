@@ -156,7 +156,8 @@
 
     /* LINKS & WIEDERVERWENDBARE BAUSTEINE */
     .eyebrow { font-size: 0.9rem; font-weight: 500; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
-    .text-link { color: inherit; text-decoration: underline; }
+    .text-link { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+    .text-link:hover { text-decoration-color: var(--accent); }
     .entry-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 500; margin-top: 0.5rem; display: inline-block; }
     .cv-card { margin-top: 2rem; padding: 1.5rem; background: var(--paper-warm); border-radius: 4px; border: 1px solid var(--rule); box-shadow: 0 2px 10px rgba(26, 24, 20, 0.04); }
     .cv-card a { color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; font-size: 1rem; }
@@ -235,8 +236,8 @@
         <p class="role">PhD Candidate in Economics <span>ifo Institute & LMU Munich</span></p>
         
         <p>
-          I am a PhD candidate at the <strong><a href="https://www.ifo.de/en/research/ifo-center-for-energy-climate-and-resources" target="_blank" rel="noopener" class="text-link">ifo Center for Energy, Climate, and Resources</a></strong> and <strong><a href="https://www.econ.lmu.de/en/index.html" target="_blank" rel="noopener" class="text-link">LMU Munich</a></strong>.
-          I am supported by a scholarship from the <strong><a href="https://www.dbu.de/en/" target="_blank" rel="noopener" class="text-link">German Federal Environmental Foundation (DBU)</a></strong>.
+          I am a PhD candidate at the <a href="https://www.ifo.de/en/research/ifo-center-for-energy-climate-and-resources" target="_blank" rel="noopener" class="text-link">ifo Center for Energy, Climate, and Resources</a> and <a href="https://www.econ.lmu.de/en/index.html" target="_blank" rel="noopener" class="text-link">LMU Munich</a>.
+          I am supported by a scholarship from the <a href="https://www.dbu.de/en/" target="_blank" rel="noopener" class="text-link">German Federal Environmental Foundation (DBU)</a>.
         </p>
         <p>
           My research asks how climate policy interacts with global inequality and the diffusion of clean technologies. To answer these questions, I combine climate-economy modeling with modern computational methods, using machine learning to solve models that are too rich for traditional techniques.
