@@ -111,12 +111,10 @@
     /* LAYOUT */
     main { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
     section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
-    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     /* Bewegung nur für Nutzer ohne "Bewegung reduzieren"-Systemeinstellung */
     @media (prefers-reduced-motion: no-preference) {
       html { scroll-behavior: smooth; }
-      section { opacity: 0; transform: translateY(24px); animation: fadeUp 0.7s forwards; }
-      .cv-entry:hover { transform: translateX(4px); }
+      .cv-entry:has(a):hover { transform: translateX(4px); }
       #backToTop:hover { transform: translateY(-3px); }
     }
     
@@ -140,7 +138,7 @@
     .cv-block h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; margin-bottom: 1rem; }
     .cv-entry { display: grid; grid-template-columns: 130px 1fr; gap: 1rem; padding: 1.2rem 1rem; border-top: 1px solid var(--rule); transition: all 0.2s ease; border-radius: 4px; }
     .cv-entry:first-of-type { border-top: none; }
-    .cv-entry:hover {
+    .cv-entry:has(a):hover {
   background: var(--paper-warm);
   box-shadow: 0 2px 10px rgba(26, 24, 20, 0.04);
 }
